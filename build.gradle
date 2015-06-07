@@ -1,0 +1,20 @@
+allprojects {
+    apply plugin: 'base'
+    apply plugin: 'project-report'
+
+    version = '1.0'
+    repositories {
+
+        mavenCentral()
+
+        flatDir {
+            dirs "${rootProject.projectDir}/lib/bin"
+        }
+    }
+
+    //Force snapshot dependencies update during every build
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
+    }
+
+}
