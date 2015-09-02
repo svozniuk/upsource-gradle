@@ -12,9 +12,4 @@ allprojects {
         }
     }
 
-    //Force snapshot dependencies update during every build
-    configurations.all {
-        resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
-    }
-
 }
